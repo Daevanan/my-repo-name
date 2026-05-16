@@ -9,6 +9,24 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- ===== Meta Pixel ===== -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1219140996858919');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1219140996858919&ev=PageView&noscript=1"/></noscript>
+<!-- ===== End Meta Pixel ===== -->
+
 <style>
 :root{
   /* Palette */
@@ -675,6 +693,370 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 }
 .footnote svg{vertical-align:-2px;margin-right:5px;color:var(--ink-3)}
 
+/* ===== Under-CTA content blocks ===== */
+.below-cta{
+  margin-top:48px;
+  padding-top:48px;
+  border-top:1px solid var(--line);
+}
+
+.section-eyebrow{
+  display:inline-block;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:14px;
+}
+.section-title{
+  font-size:clamp(24px, 6vw, 30px);
+  font-weight:700;
+  line-height:1.15;
+  letter-spacing:-.025em;
+  color:var(--ink);
+  margin-bottom:14px;
+}
+.section-title .accent{color:var(--accent)}
+.section-intro{
+  font-size:15.5px;
+  color:var(--ink-2);
+  line-height:1.6;
+  margin-bottom:24px;
+}
+
+/* Mechanism block — 3 receptor cards */
+.mechanism-grid{
+  display:grid;
+  gap:10px;
+  margin-bottom:24px;
+}
+.mech-card{
+  background:var(--surface);
+  border-radius:var(--r);
+  padding:18px 18px;
+  box-shadow:var(--shadow-sm);
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+}
+.mech-card.highlight{
+  background:var(--accent-tint);
+  border:1.5px solid var(--accent);
+  box-shadow:var(--shadow);
+}
+.mech-num{
+  flex-shrink:0;
+  width:36px;height:36px;
+  border-radius:50%;
+  background:var(--surface-2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;
+  font-weight:700;
+  color:var(--ink-2);
+}
+.mech-card.highlight .mech-num{
+  background:var(--accent);
+  color:#fff;
+}
+.mech-body{flex:1;min-width:0}
+.mech-title{
+  font-size:15px;
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:4px;
+  letter-spacing:-.01em;
+}
+.mech-desc{
+  font-size:13.5px;
+  color:var(--ink-2);
+  line-height:1.5;
+}
+.mech-tag{
+  display:inline-block;
+  font-size:10.5px;
+  font-weight:700;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  color:var(--accent);
+  background:#fff;
+  padding:3px 8px;
+  border-radius:var(--r-pill);
+  margin-left:6px;
+}
+
+/* Comparison chart */
+.compare-card{
+  background:var(--surface);
+  border-radius:var(--r-lg);
+  padding:24px 22px;
+  box-shadow:var(--shadow);
+  margin-bottom:24px;
+}
+.compare-row{
+  display:grid;
+  grid-template-columns:90px 1fr 58px;
+  align-items:center;
+  gap:12px;
+  padding:10px 0;
+}
+.compare-row + .compare-row{border-top:1px solid var(--line-2)}
+.compare-name{
+  font-size:13.5px;
+  font-weight:600;
+  color:var(--ink);
+}
+.compare-name .sub{
+  display:block;
+  font-size:11px;
+  color:var(--ink-3);
+  font-weight:500;
+  margin-top:2px;
+}
+.compare-bar-track{
+  height:10px;
+  background:var(--surface-2);
+  border-radius:var(--r-pill);
+  overflow:hidden;
+  position:relative;
+}
+.compare-bar-fill{
+  height:100%;
+  background:var(--ink-3);
+  border-radius:var(--r-pill);
+  width:0;
+  transition:width 1.1s var(--ease-out) .2s;
+}
+.compare-bar-fill.accent{background:var(--accent)}
+.compare-num{
+  font-size:14.5px;
+  font-weight:700;
+  color:var(--ink);
+  text-align:right;
+  font-feature-settings:'tnum';
+  font-variant-numeric:tabular-nums;
+}
+.compare-num.accent{color:var(--accent)}
+.compare-source{
+  margin-top:14px;
+  padding-top:14px;
+  border-top:1px solid var(--line-2);
+  font-size:11.5px;
+  color:var(--ink-3);
+  line-height:1.5;
+}
+
+/* FAQ accordion */
+.faq{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-bottom:24px;
+}
+.faq-item{
+  background:var(--surface);
+  border-radius:var(--r);
+  box-shadow:var(--shadow-sm);
+  overflow:hidden;
+  transition:box-shadow .25s var(--ease);
+}
+.faq-item[open]{
+  box-shadow:var(--shadow);
+}
+.faq-q{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:18px 20px;
+  text-align:left;
+  font-size:15px;
+  font-weight:600;
+  color:var(--ink);
+  cursor:pointer;
+  list-style:none;
+  transition:color .15s;
+}
+.faq-q::-webkit-details-marker{display:none}
+.faq-q:hover{color:var(--accent)}
+.faq-toggle{
+  flex-shrink:0;
+  width:24px;height:24px;
+  border-radius:50%;
+  background:var(--surface-2);
+  display:flex;align-items:center;justify-content:center;
+  transition:all .25s var(--ease);
+}
+.faq-item[open] .faq-toggle{
+  background:var(--accent);
+  transform:rotate(45deg);
+}
+.faq-toggle svg{
+  width:12px;height:12px;
+  color:var(--ink-2);
+  transition:color .25s;
+}
+.faq-item[open] .faq-toggle svg{color:#fff}
+.faq-a{
+  padding:0 20px 18px;
+  font-size:14.5px;
+  color:var(--ink-2);
+  line-height:1.6;
+}
+.faq-a strong{color:var(--ink);font-weight:600}
+.faq-a p+p{margin-top:10px}
+
+/* Secondary CTA at bottom */
+.cta-secondary-wrap{
+  background:var(--surface-2);
+  border-radius:var(--r-lg);
+  padding:28px 24px;
+  text-align:center;
+  margin-bottom:24px;
+}
+.cta-secondary-title{
+  font-size:20px;
+  font-weight:700;
+  letter-spacing:-.02em;
+  color:var(--ink);
+  margin-bottom:8px;
+}
+.cta-secondary-sub{
+  font-size:14px;
+  color:var(--ink-2);
+  margin-bottom:20px;
+  line-height:1.5;
+}
+
+/* Stats dashboard view (?stats) */
+#statsView{
+  display:none;
+  max-width:560px;
+  margin:0 auto;
+  padding:40px 20px 80px;
+}
+#statsView.active{display:block}
+.stats-note{
+  background:#FFF7E6;
+  border:1px solid #F0D8A4;
+  border-radius:var(--r);
+  padding:14px 16px;
+  margin-bottom:24px;
+  font-size:13.5px;
+  color:#7A5310;
+  line-height:1.55;
+}
+.stats-note strong{color:#5A3A00}
+.stats-title{
+  font-size:28px;
+  font-weight:700;
+  letter-spacing:-.025em;
+  color:var(--ink);
+  margin-bottom:8px;
+}
+.stats-sub{
+  font-size:14px;
+  color:var(--ink-3);
+  margin-bottom:24px;
+}
+.stats-funnel{
+  background:var(--surface);
+  border-radius:var(--r-lg);
+  padding:8px 22px;
+  box-shadow:var(--shadow);
+  margin-bottom:20px;
+}
+.stats-step{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:14px 0;
+  border-bottom:1px solid var(--line-2);
+}
+.stats-step:last-child{border-bottom:none}
+.stats-step-label{
+  flex:1;
+  font-size:14px;
+  font-weight:600;
+  color:var(--ink);
+}
+.stats-step-label .sub{
+  display:block;
+  font-size:11.5px;
+  font-weight:500;
+  color:var(--ink-3);
+  margin-top:2px;
+}
+.stats-step-count{
+  font-size:18px;
+  font-weight:700;
+  color:var(--ink);
+  font-feature-settings:'tnum';
+  font-variant-numeric:tabular-nums;
+}
+.stats-step-pct{
+  font-size:12px;
+  color:var(--ink-3);
+  font-weight:500;
+  display:block;
+  margin-top:2px;
+}
+.stats-step-pct.drop{color:var(--accent)}
+.stats-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.stats-btn{
+  flex:1;
+  min-width:140px;
+  background:var(--surface);
+  color:var(--ink);
+  padding:14px 18px;
+  border-radius:var(--r);
+  font-size:14px;
+  font-weight:600;
+  text-align:center;
+  cursor:pointer;
+  border:1.5px solid var(--line);
+  transition:all .2s var(--ease);
+}
+.stats-btn:hover{
+  border-color:var(--accent);
+  color:var(--accent);
+}
+.stats-btn.danger:hover{
+  border-color:#C73E1D;
+  color:#C73E1D;
+}
+.stats-answers{
+  background:var(--surface);
+  border-radius:var(--r-lg);
+  padding:18px 22px;
+  box-shadow:var(--shadow);
+  margin-top:20px;
+}
+.stats-answers h3{
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--ink-3);
+  margin-bottom:12px;
+}
+.stats-answers-row{
+  display:flex;
+  justify-content:space-between;
+  font-size:13px;
+  padding:6px 0;
+  border-bottom:1px solid var(--line-2);
+}
+.stats-answers-row:last-child{border-bottom:none}
+.stats-answers-row .k{color:var(--ink-3)}
+.stats-answers-row .v{color:var(--ink);font-weight:600}
+
 /* ===== Responsive ===== */
 @media (max-width:420px){
   .wrap{padding:20px 16px 80px}
@@ -686,6 +1068,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   .stat-block{padding:24px 22px}
   .result-body{font-size:15.5px}
   .publication{font-size:20px}
+  .compare-row{grid-template-columns:80px 1fr 50px;gap:10px}
+  .compare-name{font-size:13px}
+  .compare-num{font-size:13.5px}
+  .mech-card{padding:14px}
+  .below-cta{margin-top:36px;padding-top:36px}
 }
 @media (min-width:600px){
   .wrap{padding:40px 20px 80px}
@@ -775,7 +1162,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
     <section class="step" data-step="5">
       <span class="eyebrow">Last Question</span>
       <h1 class="q-headline">When do you want to <span class="accent">start</span>?</h1>
-      <p class="q-sub">This tells us if we can hold your place.</p>
+      <p class="q-sub">This tells us if we can hold a pen for you.</p>
       <div class="options" data-q="start_when">
         <button class="option" data-value="this_week"><span class="option-bullet"></span><span class="option-label">I'm ready to start this week</span></button>
         <button class="option" data-value="month"><span class="option-bullet"></span><span class="option-label">Within the next 2–4 weeks</span></button>
@@ -845,7 +1232,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
         <span class="value">Retatrutide</span>
       </div>
       <div class="match-row">
-        <span class="label">Suggested vial</span>
+        <span class="label">Suggested pen</span>
         <span class="value" id="matchVial">—</span>
       </div>
       <div class="match-row">
@@ -859,7 +1246,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 
     <div class="cta-wrap">
       <a href="#" id="ctaButton" class="cta">
-        View my recommended vial
+        View my recommended pen
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
     </div>
@@ -871,18 +1258,271 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
     </div>
 
     <p class="disclaimer">For research purposes only. Not for human consumption.</p>
+
+    <!-- ===== Under-CTA content: Mechanism, Comparison, FAQ ===== -->
+    <div class="below-cta">
+
+      <!-- Block 1: How it works (3 receptors) -->
+      <span class="section-eyebrow">How It Works</span>
+      <h2 class="section-title">The first compound to target <span class="accent">three</span> appetite receptors at once.</h2>
+      <p class="section-intro">Older GLP-1s only address part of the hunger signal. That's why they work for some people and fail for others. Retatrutide hits all three known receptors simultaneously — which is why trial results have outperformed every other compound in the category.</p>
+
+      <div class="mechanism-grid">
+        <div class="mech-card">
+          <div class="mech-num">1</div>
+          <div class="mech-body">
+            <div class="mech-title">GLP-1 receptor</div>
+            <div class="mech-desc">Slows gastric emptying so you feel full for longer. <span style="color:var(--ink-3);font-weight:500">(Also targeted by Ozempic, Wegovy.)</span></div>
+          </div>
+        </div>
+        <div class="mech-card">
+          <div class="mech-num">2</div>
+          <div class="mech-body">
+            <div class="mech-title">GIP receptor</div>
+            <div class="mech-desc">Improves insulin sensitivity and reduces fat storage. <span style="color:var(--ink-3);font-weight:500">(Also targeted by Mounjaro.)</span></div>
+          </div>
+        </div>
+        <div class="mech-card highlight">
+          <div class="mech-num">3</div>
+          <div class="mech-body">
+            <div class="mech-title">Glucagon receptor <span class="mech-tag">Retatrutide only</span></div>
+            <div class="mech-desc">Increases energy expenditure — your body burns more calories at rest. This is the third pathway no other compound activates.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Block 2: Head-to-head trial comparison -->
+      <span class="section-eyebrow">Clinical Evidence</span>
+      <h2 class="section-title">Head-to-head: average weight loss in trials.</h2>
+      <p class="section-intro">Published peer-reviewed data from Phase 2 and Phase 3 trials, plotted on the same axis. Higher is better.</p>
+
+      <div class="compare-card">
+        <div class="compare-row">
+          <div class="compare-name">Diet & exercise<span class="sub">Baseline</span></div>
+          <div class="compare-bar-track"><div class="compare-bar-fill" data-pct="12"></div></div>
+          <div class="compare-num">3%</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-name">Ozempic<span class="sub">Semaglutide</span></div>
+          <div class="compare-bar-track"><div class="compare-bar-fill" data-pct="61"></div></div>
+          <div class="compare-num">14.9%</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-name">Mounjaro<span class="sub">Tirzepatide</span></div>
+          <div class="compare-bar-track"><div class="compare-bar-fill" data-pct="93"></div></div>
+          <div class="compare-num">22.5%</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-name">Retatrutide<span class="sub">Tri-agonist</span></div>
+          <div class="compare-bar-track"><div class="compare-bar-fill accent" data-pct="100"></div></div>
+          <div class="compare-num accent">24.2%</div>
+        </div>
+        <div class="compare-source">Sources: STEP trials (Semaglutide), SURMOUNT trials (Tirzepatide), TRIUMPH trials (Retatrutide). Results show mean percentage body weight reduction at study endpoint.</div>
+      </div>
+
+      <!-- Block 3: FAQ -->
+      <span class="section-eyebrow">Common Questions</span>
+      <h2 class="section-title">What everyone wants to know.</h2>
+
+      <div class="faq">
+        <details class="faq-item">
+          <summary class="faq-q">
+            How is this different from Ozempic or Mounjaro?
+            <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </summary>
+          <div class="faq-a">
+            <p>Ozempic and Wegovy hit <strong>one</strong> receptor (GLP-1). Mounjaro hits <strong>two</strong> (GLP-1 + GIP). Retatrutide is the first compound to hit <strong>all three</strong> — GLP-1, GIP, and glucagon — at the same time.</p>
+            <p>That third receptor matters because it's the one that increases how many calories your body burns at rest. Older compounds just suppress appetite. Retatrutide suppresses appetite <em>and</em> speeds up your metabolism.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">
+            Will it work for me if nothing else has?
+            <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </summary>
+          <div class="faq-a">
+            <p>If diets, gym memberships, or older GLP-1s haven't worked for you, that's actually a strong signal Retatrutide could.</p>
+            <p>The reason older approaches fail isn't willpower — it's that most people's bodies have <strong>multiple</strong> hunger pathways that need to be addressed. Single-pathway tools (diet, Ozempic) only touch part of the problem. Retatrutide is the first compound built to address all three at once.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">
+            Is this legitimate? How do I know it's real Retatrutide?
+            <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </summary>
+          <div class="faq-a">
+            <p>Every batch is <strong>third-party tested for purity and potency</strong>. Lab reports are available on the product page so you can verify the exact compound before you order.</p>
+            <p>The product is supplied for research purposes only, with full traceability from manufacturer to your door.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">
+            How much does it cost vs Ozempic?
+            <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </summary>
+          <div class="faq-a">
+            <p>Private Ozempic prescriptions in the UK typically run <strong>£200–£300 per month</strong>, and that's if your GP will write one. An 8-week Retatrutide pen course is comparable — but with a stronger compound and no GP visit required.</p>
+            <p>Most people end up paying significantly less per kg of weight lost, because Retatrutide trials show roughly 60% more weight loss than Ozempic over the same timeframe.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">
+            What's the delivery and packaging like?
+            <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </summary>
+          <div class="faq-a">
+            <p>All UK orders ship in <strong>plain, unmarked packaging</strong> with no external branding. Tracked delivery, typically arrives within 1–2 working days.</p>
+            <p>Discreet billing on your statement — appears as a generic merchant name, not the product.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- Secondary CTA at the very bottom -->
+      <div class="cta-secondary-wrap">
+        <div class="cta-secondary-title">Ready to start?</div>
+        <div class="cta-secondary-sub">Your recommended pen and 8-week course is reserved for the next 15 minutes.</div>
+        <a href="#" id="ctaButtonSecondary" class="cta" style="max-width:none">
+          Claim my recommended pen
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+    </div>
+    <!-- ===== End under-CTA content ===== -->
+
   </div>
 
   <p class="footnote" id="footnote">
     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
     Your responses are confidential. Health &amp; Body Today does not share your data.
   </p>
+
+  <!-- ===== Hidden stats dashboard (visit ?stats to view) ===== -->
+  <div id="statsView">
+    <h1 class="stats-title">Quiz Stats</h1>
+    <p class="stats-sub">Local-device funnel data</p>
+
+    <div class="stats-note">
+      <strong>This is local-device data only.</strong> These numbers reflect activity from <em>this browser only</em>, not all visitors. For real cross-visitor analytics, install GA4 or a backend logging system.
+    </div>
+
+    <div class="stats-funnel" id="statsFunnel">
+      <!-- Populated by JS -->
+    </div>
+
+    <div class="stats-answers" id="statsAnswers" style="display:none">
+      <h3>Last completed answers</h3>
+      <div id="statsAnswersBody"></div>
+    </div>
+
+    <div class="stats-actions" style="margin-top:20px">
+      <button class="stats-btn" id="statsRefresh">Refresh data</button>
+      <button class="stats-btn" id="statsTakeQuiz">Take the quiz</button>
+      <button class="stats-btn danger" id="statsReset">Reset all stats</button>
+    </div>
+  </div>
 </main>
 
 <script>
-// ====== CONFIG — change this to your PDP URL ======
-const PDP_URL = "https://shopretatrutide.co.uk/?utm_source=quiz&utm_medium=bridge&utm_campaign=hbt_glp1";
-// ===================================================
+// ====== CONFIG ======
+const PDP_URL = "https://buyretatrutidepen.co.uk/";
+const DEFAULT_UTM = {
+  utm_source: "quiz",
+  utm_medium: "bridge",
+  utm_campaign: "hbt_glp1"
+};
+// ====================
+
+// ---------- TRACKING PARAM CAPTURE ----------
+// Captures ad attribution from the landing URL + Facebook cookies,
+// stores it in sessionStorage so it survives the whole quiz session,
+// then re-attaches it to the PDP URL on the final CTA click.
+
+const TRACKING_KEYS = [
+  'fbclid','gclid','ttclid','msclkid','twclid','li_fat_id','epik',
+  'utm_source','utm_medium','utm_campaign','utm_content','utm_term','utm_id'
+];
+
+function getCookie(name){
+  const m = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+  return m ? m.pop() : null;
+}
+
+function uuid(){
+  // RFC4122 v4 — used as Facebook CAPI event_id for deduplication
+  if(crypto && crypto.randomUUID) return crypto.randomUUID();
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+    const r = Math.random()*16|0, v = c==='x' ? r : (r&0x3|0x8);
+    return v.toString(16);
+  });
+}
+
+function captureTracking(){
+  // 1. Try to load existing tracking from this session first
+  let saved = {};
+  try { saved = JSON.parse(sessionStorage.getItem('quiz_tracking') || '{}'); } catch(e){}
+
+  // 2. Read fresh params from current URL (in case they navigated here)
+  const params = new URLSearchParams(window.location.search);
+  TRACKING_KEYS.forEach(k => {
+    const v = params.get(k);
+    if(v) saved[k] = v;
+  });
+
+  // 3. Read Facebook cookies (these are more reliable than fbclid alone)
+  //    _fbp = browser ID, _fbc = click ID (set by Pixel when fbclid arrives)
+  const fbp = getCookie('_fbp');
+  const fbc = getCookie('_fbc');
+  if(fbp) saved.fbp = fbp;
+  if(fbc) saved.fbc = fbc;
+
+  // 4. If we have fbclid but no _fbc cookie yet, construct one in FB's format
+  //    Format: fb.{subdomain_index}.{creation_timestamp}.{fbclid}
+  if(saved.fbclid && !saved.fbc){
+    saved.fbc = 'fb.1.' + Date.now() + '.' + saved.fbclid;
+  }
+
+  // 5. Backup attribution signals
+  if(document.referrer && !saved.referrer) saved.referrer = document.referrer;
+  if(!saved.landing_url) saved.landing_url = window.location.href;
+  if(!saved.event_id) saved.event_id = uuid(); // CAPI dedup key
+  if(!saved.session_start) saved.session_start = Date.now();
+
+  // 6. Save back to sessionStorage
+  try { sessionStorage.setItem('quiz_tracking', JSON.stringify(saved)); } catch(e){}
+
+  return saved;
+}
+
+function buildPdpUrl(quizAnswers){
+  const tracking = captureTracking();
+  const url = new URL(PDP_URL);
+
+  // Default UTMs (only if not already set by an ad)
+  Object.entries(DEFAULT_UTM).forEach(([k, v]) => {
+    if(!tracking[k]) url.searchParams.set(k, v);
+  });
+
+  // Ad-tracking params
+  Object.entries(tracking).forEach(([k, v]) => {
+    if(v) url.searchParams.set(k, v);
+  });
+
+  // Quiz answers (so the PDP can personalise + so you can analyse which combos convert)
+  Object.entries(quizAnswers).forEach(([k, v]) => {
+    url.searchParams.set('q_' + k, v);
+  });
+
+  return url.toString();
+}
+
+// Capture tracking immediately on page load (don't wait for them to complete)
+captureTracking();
+// --------------------------------------------
 
 const state = { step: 1, answers: {} };
 const TOTAL = 5;
@@ -936,6 +1576,9 @@ document.querySelectorAll('.options').forEach(group => {
     group.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
     btn.classList.add('selected');
     state.answers[group.dataset.q] = btn.dataset.value;
+
+    // Log step completion to localStorage
+    logEvent('step_' + state.step + '_completed');
 
     if(navigator.vibrate) navigator.vibrate(8);
 
@@ -1010,13 +1653,13 @@ function buildResults(){
     all: 'All of the above'
   }[a.tried] || '—';
 
-  const vialMap = {
-    under_15: '5mg starter vial',
-    '15_30': '5mg starter vial',
-    '30_55': '10mg vial',
-    over_55: '15mg vial'
+  const penMap = {
+    under_15: '32mg pen · 6 week course',
+    '15_30': '32mg pen · 8 week course',
+    '30_55': '32mg pen · 12 week course',
+    over_55: '32mg pen · 16 week course'
   };
-  const vial = vialMap[a.amount] || '5mg starter vial';
+  const vial = penMap[a.amount] || '32mg pen · 8 week course';
 
   const triedCopy = {
     dieting: {
@@ -1056,9 +1699,171 @@ function buildResults(){
   document.getElementById('matchTried').textContent = triedLabel;
   document.getElementById('matchVial').textContent = vial;
 
-  const url = new URL(PDP_URL);
-  Object.entries(a).forEach(([k, v]) => url.searchParams.set('q_' + k, v));
-  document.getElementById('ctaButton').href = url.toString();
+  // Build the PDP URL with quiz answers + all captured ad tracking
+  const finalUrl = buildPdpUrl(a);
+  const ctaPrimary = document.getElementById('ctaButton');
+  const ctaSecondary = document.getElementById('ctaButtonSecondary');
+  ctaPrimary.href = finalUrl;
+  if(ctaSecondary) ctaSecondary.href = finalUrl;
+
+  // Pull the captured tracking (we need event_id for CAPI dedup)
+  let tracking = {};
+  try { tracking = JSON.parse(sessionStorage.getItem('quiz_tracking') || '{}'); } catch(e){}
+
+  // ===== Fire Meta Pixel Lead event on quiz completion =====
+  // event_id is passed so the server-side (CAPI) Lead can dedupe against this one.
+  // The same event_id is also forwarded in the CTA URL — when the PDP fires its own
+  // matching event server-side with this id, Facebook treats them as one event.
+  if(window.fbq){
+    fbq('track', 'Lead', {
+      content_name: 'GLP-1 Suitability Assessment',
+      content_category: 'Weight Management',
+      // pass the matched product so the Lead is more useful in audience building
+      content_ids: ['retatrutide_pen_32mg'],
+      value: 220.00,
+      currency: 'GBP'
+    }, { eventID: tracking.event_id });
+  }
+
+  // Wire CTA click tracking (both buttons) — local stats only.
+  // No Pixel event here. InitiateCheckout fires on the PDP when buy intent is shown.
+  [ctaPrimary, ctaSecondary].forEach(btn => {
+    if(!btn) return;
+    btn.addEventListener('click', () => {
+      logEvent('cta_clicked');
+      const pos = btn === ctaSecondary ? 'secondary' : 'primary';
+      logEvent('cta_clicked_' + pos);
+    });
+  });
+
+  // Log the quiz completion + save answers snapshot
+  logEvent('quiz_completed');
+  saveLastAnswers(a);
+
+  // Animate the comparison bars in after a short delay
+  setTimeout(() => {
+    document.querySelectorAll('.compare-bar-fill').forEach(bar => {
+      bar.style.width = bar.dataset.pct + '%';
+    });
+  }, 400);
+}
+
+// ===== Local analytics (localStorage-based) =====
+// Tracks step-completion events on THIS DEVICE only.
+// View dashboard by adding ?stats to the URL.
+
+function logEvent(eventName){
+  try {
+    const stats = JSON.parse(localStorage.getItem('quiz_stats') || '{}');
+    stats[eventName] = (stats[eventName] || 0) + 1;
+    stats.last_event_at = Date.now();
+    localStorage.setItem('quiz_stats', JSON.stringify(stats));
+  } catch(e){}
+}
+
+function saveLastAnswers(answers){
+  try {
+    localStorage.setItem('quiz_last_answers', JSON.stringify({
+      answers: answers,
+      at: Date.now()
+    }));
+  } catch(e){}
+}
+
+// Fire page-load event once
+logEvent('page_loaded');
+
+// ===== Stats Dashboard (?stats) =====
+function renderStats(){
+  let stats = {};
+  try { stats = JSON.parse(localStorage.getItem('quiz_stats') || '{}'); } catch(e){}
+
+  const loads = stats.page_loaded || 0;
+  const s1 = stats.step_1_completed || 0;
+  const s2 = stats.step_2_completed || 0;
+  const s3 = stats.step_3_completed || 0;
+  const s4 = stats.step_4_completed || 0;
+  const s5 = stats.step_5_completed || 0;
+  const completed = stats.quiz_completed || 0;
+  const ctaClicks = stats.cta_clicked || 0;
+  const ctaPrimary = stats.cta_clicked_primary || 0;
+  const ctaSecondary = stats.cta_clicked_secondary || 0;
+
+  function pct(n, base){
+    if(!base) return '—';
+    return Math.round((n / base) * 100) + '%';
+  }
+  function drop(n, prev){
+    if(!prev || n >= prev) return '';
+    return ' · <span class="drop">−' + Math.round(((prev - n) / prev) * 100) + '% drop</span>';
+  }
+
+  const rows = [
+    { label: 'Page loads', sub: 'Started the quiz', count: loads, base: loads },
+    { label: 'Q1 answered', sub: '"What does success look like"', count: s1, base: loads, prev: loads },
+    { label: 'Q2 answered', sub: '"How much to lose"', count: s2, base: loads, prev: s1 },
+    { label: 'Q3 answered', sub: '"What have you tried"', count: s3, base: loads, prev: s2 },
+    { label: 'Q4 answered', sub: '"Why now"', count: s4, base: loads, prev: s3 },
+    { label: 'Q5 answered', sub: '"When to start"', count: s5, base: loads, prev: s4 },
+    { label: 'Quiz completed', sub: 'Reached the results page', count: completed, base: loads, prev: s5 },
+    { label: 'CTA clicked', sub: 'Primary: ' + ctaPrimary + ' · Secondary: ' + ctaSecondary, count: ctaClicks, base: loads, prev: completed }
+  ];
+
+  document.getElementById('statsFunnel').innerHTML = rows.map(r => `
+    <div class="stats-step">
+      <div class="stats-step-label">
+        ${r.label}
+        <span class="sub">${r.sub}</span>
+      </div>
+      <div style="text-align:right">
+        <div class="stats-step-count">${r.count}</div>
+        <span class="stats-step-pct">${pct(r.count, r.base)} of loads${drop(r.count, r.prev)}</span>
+      </div>
+    </div>
+  `).join('');
+
+  // Last completed answers
+  let last = null;
+  try { last = JSON.parse(localStorage.getItem('quiz_last_answers') || 'null'); } catch(e){}
+  if(last && last.answers){
+    const wrap = document.getElementById('statsAnswers');
+    const body = document.getElementById('statsAnswersBody');
+    wrap.style.display = 'block';
+    const date = new Date(last.at).toLocaleString();
+    body.innerHTML = '<div class="stats-answers-row"><span class="k">Completed at</span><span class="v">' + date + '</span></div>' +
+      Object.entries(last.answers).map(([k, v]) =>
+        `<div class="stats-answers-row"><span class="k">${k}</span><span class="v">${v}</span></div>`
+      ).join('');
+  }
+}
+
+function isStatsView(){
+  return new URLSearchParams(window.location.search).has('stats');
+}
+
+if(isStatsView()){
+  // Hide the quiz, show the stats dashboard
+  document.querySelector('main.wrap').style.display = 'none';
+  document.querySelector('.progress-wrap').style.display = 'none';
+  document.querySelector('.section-label').style.display = 'none';
+  const statsView = document.getElementById('statsView');
+  statsView.classList.add('active');
+  // Insert it back into the body since main is hidden
+  document.body.appendChild(statsView);
+  renderStats();
+
+  document.getElementById('statsRefresh').addEventListener('click', renderStats);
+  document.getElementById('statsTakeQuiz').addEventListener('click', () => {
+    window.location.href = window.location.pathname;
+  });
+  document.getElementById('statsReset').addEventListener('click', () => {
+    if(confirm('Reset all local stats? This cannot be undone.')){
+      localStorage.removeItem('quiz_stats');
+      localStorage.removeItem('quiz_last_answers');
+      renderStats();
+      document.getElementById('statsAnswers').style.display = 'none';
+    }
+  });
 }
 
 updateProgress();
