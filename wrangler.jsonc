@@ -1,0 +1,8 @@
+{
+  "name": "retatrutide-quiz",
+  "compatibility_date": "2026-05-16",
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "single-page-application"
+  }
+}
